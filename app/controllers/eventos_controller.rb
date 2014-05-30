@@ -35,7 +35,7 @@ class EventosController < ApplicationController
   
   def approve
     respond_to do |format|
-      evento = Evento.find(params[:id])
+      evento = Evento.find_by_slug(params[:id])
       if evento.aprova!
         format.html { redirect_to admin_dashboard_path, notice: 'Evento Aprovado.' }
       end
@@ -45,7 +45,7 @@ class EventosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @evento = Evento.find(params[:id])
+      @evento = Evento.find_by_slug(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
