@@ -43,5 +43,6 @@ gem 'debugger', group: [:development, :test]
 
 group :test do
   gem "minitest"
+  gem "minitest-reporters"
 end
 
