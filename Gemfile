@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
+gem 'friendly_id'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
