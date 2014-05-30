@@ -3,10 +3,18 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+    
+    panel "Eventos não aprovados" do
+      table_for Evento.nao_aprovados do
+        column :nome do |evento|
+          link_to :nome, [:admin, evento]
+        end
+        column :email_para_contato
+        column :data
+        column :aprovado
+        column "Ação" do |ap|
+          button_to 'Aprovar', ap, method: :post, action: :approve, id: ap, data: { confirm: 'Are you sure?' }
+        end
       end
     end
 
