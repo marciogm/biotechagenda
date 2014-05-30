@@ -7,6 +7,8 @@ describe Evento do
   
   let(:evento) { Evento.new evento_params}
   
+  let(:eventos) { Evento.all }
+  
   it "is valid with valid params" do
     evento.must_be :valid?
   end
