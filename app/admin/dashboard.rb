@@ -7,7 +7,7 @@ ActiveAdmin.register_page "Dashboard" do
     panel "Eventos não aprovados" do
       table_for Evento.nao_aprovados do
         column :nome do |evento|
-          link_to :nome, [:admin, evento]
+          link_to evento.nome, [:admin, evento]
         end
         column :email_para_contato
         column :data
