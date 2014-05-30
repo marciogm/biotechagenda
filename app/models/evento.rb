@@ -1,6 +1,10 @@
 class Evento < ActiveRecord::Base
-  validates :nome, :email_para_contato, :data, :descricao, presence: true
+  extend FriendlyId
+  friendly_id :nome, :use => [:slugged, :finders]
   
+  validates :nome, :email_para_contato, :data, :descricao, presence: { message: "não pode ser vazio" }
+  validates :email_para_contato, format: { with: /@/, message: "dever ser válido"}
+    
   scope :nao_aprovados, -> { where(aprovado: false) }
   scope :aprovados, -> { where(aprovado: true) }
   
