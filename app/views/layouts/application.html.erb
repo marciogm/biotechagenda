@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "BiotechAgenda" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -12,8 +12,64 @@
   </head>
 
   <body>
-
-    <%= yield %>
+		
+		<div class="row">
+			<div class="large-12 columns">
+				<div class="nav-bar right">
+					<ul class="button-group">
+						<li><a href="#" class="button">Eventos</a></li>
+						<li><a href="#" class="button">Sobre</a></li>
+						<li><a href="#" class="button">Contato</a></li>
+					</ul>
+				</div>
+				<h1>Biotech<small>Agenda</small></h1>
+				<hr/>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="large-9 columns" role="content">
+				<%= yield %>
+			</div>
+			
+			<aside class="large-3 columns">
+				<h5>Categories</h5>
+				<ul class="side-nav">
+					<li><a href="#">News</a></li>
+					<li><a href="#">Code</a></li>
+					<li><a href="#">Design</a></li>
+					<li><a href="#">Fun</a></li>
+					<li><a href="#">Weasels</a></li>
+				</ul>
+				
+				<div class="panel">
+					<h5>Featured</h5>
+					<p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+					<a href="#">Read More &rarr;</a>
+				</div>
+			</aside>
+		</div>
+		
+		<footer class="row">
+			<div class="large-12 columns">
+				<hr/>
+				<div class="row">
+					<div class="large-6 columns">
+						<p>&copy; Copyright no one at all. Go to town.</p>
+					</div>
+					
+					<div class="large-6 columns">
+						<ul class="inline-list right">
+							<li><a href="#">Eventos</a></li>
+							<li><a href="#">Sobre</a></li>
+							<li><a href="#">Contato</a></li>
+							<li><a href="#">Facebook</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
     <%= javascript_include_tag "application" %>
   </body>
 </html>

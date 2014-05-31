@@ -1,37 +1,12 @@
-<h1>Listing eventos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Email para contato</th>
-      <th>Data</th>
-      <th>Data terminio</th>
-      <th>Descricao</th>
-      <th>Site</th>
-      <th>Facebook</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @eventos.each do |evento| %>
-      <tr>
-        <td><%= evento.nome %></td>
-        <td><%= evento.email_para_contato %></td>
-        <td><%= evento.data %></td>
-        <td><%= evento.data_terminio %></td>
-        <td><%= evento.descricao %></td>
-        <td><%= evento.site %></td>
-        <td><%= evento.facebook %></td>
-        <td><%= link_to 'Show', evento %></td>
-        <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
-        <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Evento', new_evento_path %>
+<% @eventos.each do |evento| %>
+	<div class="large-2 columns small-3">
+		<img src="http://placehold.it/80x80&text=[img]"/>
+	</div>
+	<div class="large-10 columns">
+		<p><strong><%= link_to evento.nome, evento %></strong><br/><%= evento.descricao %></p>
+		<ul class="inline-list">
+			<li><a href=""></a></li>
+			<li><a href="">Share</a></li>
+		</ul>
+	</div>
+<% end %>
