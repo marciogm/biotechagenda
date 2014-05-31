@@ -77,6 +77,9 @@ GEM
     execjs (2.1.0)
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
+    foundation-rails (5.2.3.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
     has_scope (0.6.0.rc)
@@ -185,14 +188,17 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  coffee-rails (~> 4.0.0)
   debugger
   devise
+  foundation-rails
   friendly_id
   jbuilder (~> 2.0)
   jquery-rails
   minitest
   minitest-reporters
   rails (= 4.1.0)
+  sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
   sqlite3
