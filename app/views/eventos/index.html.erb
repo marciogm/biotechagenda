@@ -1,5 +1,6 @@
 <h2>Próximos Eventos</h2>
-<% @eventos.aprovados.each do |evento| %>
+<div class="eventos">
+<% @eventos.aprovados_por_data.each do |evento| %>
 	<div class="large-2 columns small-3">
 		<div class="data">
 			<p class="data_evento"><%= evento.data.day %></p><small><%= Date::MONTHNAMES[evento.data.month]%></small>
@@ -23,3 +24,4 @@
 	</div>
 	<hr/>
 <% end %>
+</div>

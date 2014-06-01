@@ -9,6 +9,7 @@ class Evento < ActiveRecord::Base
     
   scope :nao_aprovados, -> { where(aprovado: false) }
   scope :aprovados, -> { where(aprovado: true) }
+  scope :aprovados_por_data, -> { where(aprovado: true).order("data ASC") }
   
   def aprova!
     self.aprovado = true
