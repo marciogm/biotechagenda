@@ -1,6 +1,8 @@
 <% @eventos.each do |evento| %>
 	<div class="large-2 columns small-3">
-		<img src="http://placehold.it/80x80&text=[img]"/>
+		<div class="data">
+			<p class="data_evento"><%= evento.data.day %></p><small><%= Date::MONTHNAMES[evento.data.month]%></small>
+		</div>
 	</div>
 	<div class="large-10 columns">
 		<p><strong><%= link_to evento.nome, evento %></strong><br/><%= evento.descricao %></p>

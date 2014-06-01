@@ -1,0 +1,18 @@
+.data {
+	font-weight: bold;
+	text-align: center;
+	min-width: 76px;
+}
+
+.data small {
+	display: block;
+	font-size: 18px;
+	font-weight: normal;
+	padding: 2px;
+}
+
+.data p {
+		font-size: 55px;
+		margin-bottom: -17px;
+		text-align:center;
+}
