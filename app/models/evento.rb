@@ -2,6 +2,8 @@ class Evento < ActiveRecord::Base
   extend FriendlyId
   friendly_id :nome, :use => [:slugged, :finders]
   
+  mount_uploader :logo, LogoUploader
+  
   validates :nome, :email_para_contato, :data, :descricao, presence: { message: "não pode ser vazio" }
   validates :email_para_contato, format: { with: /@/, message: "dever ser válido"}
     

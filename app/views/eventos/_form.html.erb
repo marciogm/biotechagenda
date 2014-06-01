@@ -1,4 +1,4 @@
-<%= form_for(@evento) do |f| %>
+<%= form_for(@evento, :html => {:multipart => true}) do |f| %>
   <% if @evento.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
@@ -61,6 +61,14 @@
 		<div class="large-12 columns">
       <label>Facebook
 				<%= f.text_field :facebook, class: "large-12.columns" %>
+      </label>
+    </div>
+  </div>
+	
+	<div class="row">
+		<div class="large-12 columns">
+      <label>Logo
+				<%= f.file_field :logo, class: "large-12.columns" %>
       </label>
     </div>
   </div>

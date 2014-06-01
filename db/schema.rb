@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530220544) do
+ActiveRecord::Schema.define(version: 20140601192354) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140530220544) do
     t.datetime "updated_at"
     t.boolean  "aprovado",           default: false
     t.string   "slug"
+    t.string   "logo"
   end
 
   add_index "eventos", ["slug"], name: "index_eventos_on_slug", unique: true

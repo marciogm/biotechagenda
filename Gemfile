@@ -20,6 +20,7 @@ gem 'friendly_id'
 gem 'font-awesome-sass'
 gem 'foundation-rails'
 gem 'carrierwave'
+gem "mini_magick"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

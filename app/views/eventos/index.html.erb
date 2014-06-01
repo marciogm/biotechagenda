@@ -1,15 +1,25 @@
 <h2>Próximos Eventos</h2>
-<% @eventos.each do |evento| %>
+<% @eventos.aprovados.each do |evento| %>
 	<div class="large-2 columns small-3">
 		<div class="data">
 			<p class="data_evento"><%= evento.data.day %></p><small><%= Date::MONTHNAMES[evento.data.month]%></small>
 		</div>
 	</div>
-	<div class="large-10 columns">
+	
+	<div class="large-2 columns small-3">
+		<% if evento.logo? %>
+			<%= image_tag(evento.logo_url) %>
+		<% else %>
+			<%= image_tag "http://placehold.it/80x80&text=No Image" %>
+		<% end %>
+	</div>
+	
+	<div class="large-8 columns">
 		<p><strong><%= link_to evento.nome, evento %></strong><br/><%= evento.descricao %></p>
 		<ul class="inline-list">
 			<li><a href=""></a></li>
 			<li><a href="">Share</a></li>
 		</ul>
 	</div>
+	<hr/>
 <% end %>
