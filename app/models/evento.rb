@@ -4,6 +4,9 @@ class Evento < ActiveRecord::Base
   
   mount_uploader :logo, LogoUploader
   
+  belongs_to :estado
+  belongs_to :cidade
+  
   validates :nome, :email_para_contato, :data, :descricao, presence: { message: "não pode ser vazio" }
   validates :email_para_contato, format: { with: /@/, message: "dever ser válido"}
     

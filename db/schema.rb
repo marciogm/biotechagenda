@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601192354) do
+ActiveRecord::Schema.define(version: 20140601235008) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,6 +46,22 @@ ActiveRecord::Schema.define(version: 20140601192354) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "cidades", force: true do |t|
+    t.string   "nome"
+    t.integer  "estado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cidades", ["estado_id"], name: "index_cidades_on_estado_id"
+
+  create_table "estados", force: true do |t|
+    t.string   "sigla"
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "eventos", force: true do |t|
     t.string   "nome"
     t.string   "email_para_contato"
@@ -59,8 +75,12 @@ ActiveRecord::Schema.define(version: 20140601192354) do
     t.boolean  "aprovado",           default: false
     t.string   "slug"
     t.string   "logo"
+    t.integer  "estado_id"
+    t.integer  "cidade_id"
   end
 
+  add_index "eventos", ["cidade_id"], name: "index_eventos_on_cidade_id"
+  add_index "eventos", ["estado_id"], name: "index_eventos_on_estado_id"
   add_index "eventos", ["slug"], name: "index_eventos_on_slug", unique: true
 
   create_table "friendly_id_slugs", force: true do |t|
