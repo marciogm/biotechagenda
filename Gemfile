@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'friendly_id'
+gem 'font-awesome-sass'
 gem 'foundation-rails'
 
 # Use jquery as the JavaScript library

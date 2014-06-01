@@ -14,62 +14,73 @@
 
   <body>
 		
-		<div class="row">
-			<div class="large-12 columns">
-				<div class="nav-bar right">
-					<ul class="button-group">
-						<li><a href="#" class="button">Eventos</a></li>
-						<li><a href="#" class="button">Sobre</a></li>
-						<li><a href="#" class="button">Contato</a></li>
-					</ul>
-				</div>
-				<h1>Biotech<small>Agenda</small></h1>
-				<hr/>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="large-9 columns" role="content">
-				<%= yield %>
-			</div>
-			
-			<aside class="large-3 columns">
-				<h5>Categories</h5>
-				<ul class="side-nav">
-					<li><a href="#">News</a></li>
-					<li><a href="#">Code</a></li>
-					<li><a href="#">Design</a></li>
-					<li><a href="#">Fun</a></li>
-					<li><a href="#">Weasels</a></li>
-				</ul>
+		<!-- HEADER SECTION -->
+		<div class="contain-to-grid header-section">
+ 
+				<!-- TOPBAR SECTION -->
+				<nav class="top-bar important-class" data-topbar>
+         
+				    <!-- TITLE AREA & LOGO -->
+				    <ul class="title-area">
+				        <li class="name">
+									<h1>Biotech<small>Agenda</small></h1>
+				        </li>
+				        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+				    </ul> <!-- END TITLE AREA & LOGO -->
+ 
+				    <!-- MENU ITEMS -->
+				    <section class="top-bar-section">
+				        <ul class="right">
+				            <li class="active"><a href="index.php">Eventos</a></li>
+				            <li><a href="blog.php">Sobre</a></li>
+				            <li><a href="#">Contato</a></li>
+				        </ul>
+				    </section> <!-- END MENU ITEMS -->
+				</nav> <!-- END TOPBAR SECTION -->
+ 
+		    </nav> <!-- END TOPBAR SECTION -->
+		</div> <!-- END HEADER SECTION
+ 
+		<!-- CONTENT FILL WHEN SCROLL = 0 -->
+		<div class="header-fill"></div>
+ 
+		<!-- CONTENT SECTION -->
+		<div class="row content-section">
+		    <div class="main-content">
+		        <div class="small-9 medium-9 large-9 columns">
+		            <%= yield %>
+		        </div>
+						
+							<aside class="large-3 columns">
+								<%= link_to "Novo Evento", new_evento_path, class: "button expand"%>
+								<h5>Categories</h5>
+								<ul class="side-nav">
+									<li><a href="#">News</a></li>
+									<li><a href="#">Code</a></li>
+									<li><a href="#">Design</a></li>
+									<li><a href="#">Fun</a></li>
+									<li><a href="#">Weasels</a></li>
+								</ul>
 				
-				<div class="panel">
-					<h5>Featured</h5>
-					<p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-					<a href="#">Read More &rarr;</a>
-				</div>
-			</aside>
-		</div>
+								<div class="panel">
+									<h5>Featured</h5>
+									<p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+									<a href="#">Read More &rarr;</a>
+								</div>
+							</aside>
+						</div>
+		    </div>
+		</div> <!-- END CONTENT SECTION -->
+ 
+		<!-- FOOTER SECTION -->
+		<div class="footer-section">
+		    <div class="row">
+		        <div class="small-12 medium-12 large-12 columns">
+		            <p>&copy; Copyright 2014</p>
+		        </div>
+		    </div>
+		</div> <!-- END FOOTER SECTION -->
 		
-		<footer class="row">
-			<div class="large-12 columns">
-				<hr/>
-				<div class="row">
-					<div class="large-6 columns">
-						<p>&copy; Copyright no one at all. Go to town.</p>
-					</div>
-					
-					<div class="large-6 columns">
-						<ul class="inline-list right">
-							<li><a href="#">Eventos</a></li>
-							<li><a href="#">Sobre</a></li>
-							<li><a href="#">Contato</a></li>
-							<li><a href="#">Facebook</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
 		
     <%= javascript_include_tag "application" %>
   </body>
