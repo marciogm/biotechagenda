@@ -10,37 +10,62 @@
       </ul>
     </div>
   <% end %>
+	
+	<div class="row">
+		<div class="large-12 columns">
+      <label>Nome do evento
+				<%= f.text_field :nome, class: "large-12.columns" %>
+      </label>
+    </div>
+  </div>
+	
+	<div class="row">
+		<div class="large-12 columns">
+      <label>E-mail para contato
+				<%= f.text_field :email_para_contato, class: "large-12.columns" %>
+      </label>
+    </div>
+  </div>
+	
+	<div class="row">
+		<div class="large-6 columns">
+      <label>Quando?
+				<%= f.text_field :data, class: "large-12.columns span2", id: "dp"  %>
+      </label>
+    </div>
+		
+		<div class="large-6 columns">
+      <label>Termina?
+				<%= f.text_field :data_terminio, class: "large-12.columns span2", id: "dp2" %>
+      </label>
+    </div>
+  </div>
+	
+	<div class="row">
+		<div class="large-12 columns">
+      <label>Descricao
+				<%= f.text_area :descricao, class: "large-12.columns" %>
+      </label>
+    </div>
+  </div>
+	
+	<div class="row">
+		<div class="large-12 columns">
+      <label>Site
+				<%= f.text_field :site, class: "large-12.columns" %>
+      </label>
+    </div>
+  </div>
+	
+	<div class="row">
+		<div class="large-12 columns">
+      <label>Facebook
+				<%= f.text_field :facebook, class: "large-12.columns" %>
+      </label>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :email_para_contato %><br>
-    <%= f.text_field :email_para_contato %>
-  </div>
-  <div class="field">
-    <%= f.label :data %><br>
-    <%= f.date_select :data %>
-		<input type="text" class="span2" value="02-16-2012" id="dp1">
-  </div>
-  <div class="field">
-    <%= f.label :data_terminio %><br>
-    <%= f.date_select :data_terminio %>
-  </div>
-  <div class="field">
-    <%= f.label :descricao %><br>
-    <%= f.text_area :descricao %>
-  </div>
-  <div class="field">
-    <%= f.label :site %><br>
-    <%= f.text_field :site %>
-  </div>
-  <div class="field">
-    <%= f.label :facebook %><br>
-    <%= f.text_field :facebook %>
-  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button [radius round]" %>
   </div>
 <% end %>
