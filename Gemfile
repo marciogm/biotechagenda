@@ -19,6 +19,7 @@ gem 'devise'
 gem 'friendly_id'
 gem 'font-awesome-sass'
 gem 'foundation-rails'
+gem 'carrierwave'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
