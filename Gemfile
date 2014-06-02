@@ -21,6 +21,8 @@ gem 'font-awesome-sass'
 gem 'foundation-rails'
 gem 'carrierwave'
 gem "mini_magick"
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

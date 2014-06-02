@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   resources :eventos
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -8,6 +12,11 @@ Rails.application.routes.draw do
   
   match "eventos/:id", to: 'eventos#approve', via: [:post]
   match "/cidade_por_estado", to: "cidades#cidade_por_estado", via: [:get]
+  
+  # Routes for Facebook login
+  match "auth/:provider/callback", to: "sessions#create", via: [:get, :post]
+  match "auth/failure", to: redirect('/'), via: [:get, :post]
+  match "signout", to: "sessions#destroy", as: "signout", via: [:get, :post]
 
   
   # The priority is based upon order of creation: first created -> highest priority.

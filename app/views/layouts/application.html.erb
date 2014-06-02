@@ -35,8 +35,14 @@
 				            <li class="active"><%=link_to "Eventos", eventos_path %></li>
 				            <li><a href="blog.php">Sobre</a></li>
 				            <li><a href="#">Contato</a></li>
+										<% if current_user %>
+											<li><%= link_to current_user.name, "/" %></li>
+											<li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
+										<% else %>
+											<li><%= link_to "Login pelo Facebook", "/auth/facebook", id: "sign_in" %>
+										<% end %>
 				        </ul>
-				    </section> <!-- END MENU ITEMS -->
+				    </section> <!-- END MENU ITEMS -->						
 				</nav> <!-- END TOPBAR SECTION -->
  
 		    </nav> <!-- END TOPBAR SECTION -->
