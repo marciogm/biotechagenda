@@ -32,6 +32,10 @@
 		text-align:center;
 }
 
-.eventos {
-	margin-top: 50px;
+.eventos p {
+	padding-bottom: 0px;
+}
+
+h2 {
+	padding-bottom: 40px;
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601235008) do
+ActiveRecord::Schema.define(version: 20140602032949) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(version: 20140601235008) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "categoria", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "cidades", force: true do |t|
     t.string   "nome"
     t.integer  "estado_id"
@@ -77,8 +83,10 @@ ActiveRecord::Schema.define(version: 20140601235008) do
     t.string   "logo"
     t.integer  "estado_id"
     t.integer  "cidade_id"
+    t.integer  "categoria_id"
   end
 
+  add_index "eventos", ["categoria_id"], name: "index_eventos_on_categoria_id"
   add_index "eventos", ["cidade_id"], name: "index_eventos_on_cidade_id"
   add_index "eventos", ["estado_id"], name: "index_eventos_on_estado_id"
   add_index "eventos", ["slug"], name: "index_eventos_on_slug", unique: true

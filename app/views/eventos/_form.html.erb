@@ -20,9 +20,14 @@
   </div>
 	
 	<div class="row">
-		<div class="large-12 columns">
+		<div class="large-6 columns">
       <label>E-mail para contato
 				<%= f.text_field :email_para_contato, class: "large-12.columns" %>
+      </label>
+    </div>
+		<div class="large-6 columns">
+      <label>Categoria
+				<%= f.collection_select :categoria_id, Categoria.all, :id, :nome, :include_blank => "Selecione uma Categoria" %>
       </label>
     </div>
   </div>
