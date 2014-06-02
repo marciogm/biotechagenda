@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: "eventos#index"
   
   match "eventos/:id", to: 'eventos#approve', via: [:post]
+  match "/cidade_por_estado", to: "cidades#cidade_por_estado", via: [:get]
 
   
   # The priority is based upon order of creation: first created -> highest priority.

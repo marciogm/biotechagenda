@@ -3,7 +3,7 @@ require 'test_helper'
 describe Evento do
   
   let(:evento_params) {{ nome: "Evento de Testes", email_para_contato: "contato@evento.com", 
-      data: "2014-05-30", descricao: "Eventos de teste"}}
+      data: "2014-05-30", descricao: "Eventos de teste", estado_id: "1", cidade_id: "1"}}
   
   let(:evento) { Evento.new evento_params}
   

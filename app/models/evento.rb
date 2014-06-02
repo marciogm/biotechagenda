@@ -7,7 +7,7 @@ class Evento < ActiveRecord::Base
   belongs_to :estado
   belongs_to :cidade
   
-  validates :nome, :email_para_contato, :data, :descricao, presence: { message: "não pode ser vazio" }
+  validates :nome, :email_para_contato, :data, :descricao, :estado_id, :cidade_id, presence: { message: "não pode ser vazio" }
   validates :email_para_contato, format: { with: /@/, message: "dever ser válido"}
     
   scope :nao_aprovados, -> { where(aprovado: false) }
