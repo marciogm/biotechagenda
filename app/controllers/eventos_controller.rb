@@ -46,9 +46,9 @@ class EventosController < ApplicationController
     respond_to do |format|
       evento = Evento.find_by_slug(params[:id])
       if evento.confirma_presenca(current_user)
-        format.html { redirect_to root_path, notice: "Você esta confirmado para o evento: #{evento.nome}" }
+        format.html { redirect_to evento, notice: "Você esta confirmado para o evento: #{evento.nome}" }
       else
-        format.html { redirect_to root_path, alert: "Erro ao confirmar presença em: #{evento.nome}"}
+        format.html { redirect_to evento, alert: "Erro ao confirmar presença em: #{evento.nome}"}
       end
     end
   end
@@ -57,9 +57,9 @@ class EventosController < ApplicationController
     respond_to do |format|
       evento = Evento.find_by_slug(params[:id])
       if evento.desconfirma_presenca(current_user)
-        format.html { redirect_to root_path, alert: "Que pena, você não vai mais em: #{evento.nome}"}
+        format.html { redirect_to evento, alert: "Que pena, você não vai mais em: #{evento.nome}"}
       else
-        format.html { redirect_to root_path, alert: "Erro ao desconfirmar presença em: #{evento.nome}"}
+        format.html { redirect_to evento, alert: "Erro ao desconfirmar presença em: #{evento.nome}"}
       end
     end
   end

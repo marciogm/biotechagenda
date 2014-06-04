@@ -1,39 +1,46 @@
-<p id="notice"><%= notice %></p>
+<h3><%= @evento.nome %></h3>
+<div class="large-12 columns">
+	<div class="panel callout radius">
+		<strong>Cidade:</strong> <%= @evento.cidade.nome %> - <%= @evento.estado.sigla %>
+		</br>
+		</br>
+		<% if @evento.data_terminio.nil? %>
+			<strong>Data:</strong> <%= @evento.data.strftime("%d/%m/%Y") %>
+		<% else %>
+		<strong>Data:</strong> <%= @evento.data.strftime("%d/%m/%Y") %> <strong>até</strong> <%= @evento.data_terminio.strftime("%d/%m/%Y") %>
+		<% end %>
+		</br>
+		</br>
+	  <strong>Email para contato:</strong>
+	  <%= @evento.email_para_contato %>
+		</br>
+		</br>
+	  <strong>Site:</strong>
+	  <%= @evento.site %>
+		</br>
+		</br>
+	  <strong>Facebook:</strong>
+	  <%= @evento.facebook %>
+	</div>
+</div>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @evento.nome %>
-</p>
+<div class="large-12 columns">
+		<p>O II Curso de Inverno em Biotecnologia acontece entre os dias 21 e 25 de julho, no Bloco C e na Unidade de Biotecnologia do Campus Ribeirão da Universidade. As inscrições podem ser realizadas de 26 de maio a 13 de junho. Realizado pelo Programa de Pós-Graduação Stricto Sensu em Biotecnologia, o Curso de Inverno tem como objetivos proporcionar o treinamento e a vivência prática em algumas técnicas biotecnológicas aos inscritos e também promover a interação entre alunos e profissionais da área. É voltado para estudantes de graduação, pós-graduação e profissionais das áreas de Agronomia, Biotecnologia, Biologia, Farmácia, Engenharias (Ambiental, Florestal, Química) e Biomedicina. A programação, organizada especialmente para o evento, conta com palestras que abordam temáticas e inovações biotecnológicas em diversas áreas, além dos minicursos Bioensaios farmacológicos, Clonagem gênica e Química de produtos naturais. O investimento para participar das palestras será de R$50,00 e para cada minicurso será de R$ 30,00, as vagas são limitadas.</p>
+</div>
 
-<p>
-  <strong>Email para contato:</strong>
-  <%= @evento.email_para_contato %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @evento.data %>
-</p>
-
-<p>
-  <strong>Data terminio:</strong>
-  <%= @evento.data_terminio %>
-</p>
-
-<p>
-  <strong>Descricao:</strong>
-  <%= @evento.descricao %>
-</p>
-
-<p>
-  <strong>Site:</strong>
-  <%= @evento.site %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @evento.facebook %>
-</p>
-
-<%= link_to 'Edit', edit_evento_path(@evento) %> |
-<%= link_to 'Back', eventos_path %>
+<div class="large-12 columns">
+	<div class="panel clearfix">
+		<h5>Confirmados: </h5>
+		<% if @evento.confirmas.empty? %>
+			<small>Seja o primeiro a confirmar</small>
+		<% else %>
+			<% @evento.confirmas.each do |f| %>
+				<%= image_tag f.user.facebook_imagem_url, "data-tooltip" => "" ,class: "has-tip", title: f.user.name %>
+			<% end %>
+		<% end %>
+		<hr/>
+		<% if @evento.usuario_aprovado?(current_user)%>
+				<%= link_to "Confirmar", {controller: :eventos, action: :confirma_presenca_evento, id: @evento }, method: :post %>
+		<% end %>
+	</div>
+</div>
