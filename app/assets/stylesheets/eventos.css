@@ -23,7 +23,7 @@
 	display: block;
 	font-size: 18px;
 	font-weight: normal;
-	padding: 2px;
+	padding-top: 20px;
 }
 
 .data p {
@@ -32,12 +32,12 @@
 		text-align:center;
 }
 
-.eventos p {
-	padding-bottom: 0px;
-}
-
 h2 {
 	padding-bottom: 40px;
+}
+
+.show_evento p {
+	padding-bottom: 0px;
 }
 
 #myModal {
