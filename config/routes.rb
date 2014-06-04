@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root to: "eventos#index"
   
   match "eventos/:id", to: 'eventos#approve', via: [:post]
+  match "eventos/confirmar/:id", to: 'eventos#confirma_presenca_evento', via: [:post]
   match "/cidade_por_estado", to: "cidades#cidade_por_estado", via: [:get]
   
   # Routes for Facebook login

@@ -7,6 +7,7 @@ class Evento < ActiveRecord::Base
   belongs_to :estado
   belongs_to :cidade
   belongs_to :categoria
+  has_many :confirmas
   
   validates :nome, :email_para_contato, :data, :descricao, :estado_id, :cidade_id, :categoria_id, presence: { message: "não pode ser vazio" }
   validates :email_para_contato, format: { with: /@/, message: "dever ser válido"}
@@ -25,4 +26,16 @@ class Evento < ActiveRecord::Base
     self.update_attributes(:aprovado => false)
   end
   
+  def confirma_presenca(user)
+    if usuario_aprovado? user
+      confirma = Confirma.create!(evento_id: self.id, user_id: user.id)
+    end
+  end
+  
+  private
+   
+  def usuario_aprovado?(user)
+    user = Confirma.where(user_id: self.id, evento_id: user.id)
+    user.empty?
+  end
 end

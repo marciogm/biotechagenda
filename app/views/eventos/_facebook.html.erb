@@ -1,0 +1,18 @@
+<div class="row">
+<% unless current_user %>
+	<div class="large-4 large-centered columns">
+		<%= image_tag "FB-f-Logo__blue_100.png"%>
+	</div>
+	<div class="large-10 large-centered columns">
+		<p><%= link_to "Primeiro entre com sua conta do Facebook", "/auth/facebook", id: "sign_in" %></p>
+	</div>
+<% else %>
+	<h4>Confirmados</h4>
+	
+	<%=  button_to 'Confirmar', method: :post, action: :confirma_presenca_evento, id: evento, data: { confirm: 'Are you sure?' } %>
+	
+	<!-- <ul class="small-block-grid-6">
+	  <li><img data-tooltip class="has-tip" title="Renato Giaxa Marinheiro" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/t1.0-1/c0.0.50.50/p50x50/10322757_785230271490075_2295673980512066316_t.jpg"/></li>
+	</ul> -->
+<% end %>
+</div>

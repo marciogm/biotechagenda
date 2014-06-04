@@ -41,6 +41,17 @@ class EventosController < ApplicationController
       end
     end
   end
+  
+  def confirma_presenca_evento
+    respond_to do |format|
+      evento = Evento.find_by_slug(params[:id])
+      if evento.confirma_presenca(current_user)
+        format.html { redirect_to root_path, notice: 'Você esta confirmado para este evento' }
+      else
+        format.html { redirect_to root_path, alert: 'Você já esta confirmado'}
+      end
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

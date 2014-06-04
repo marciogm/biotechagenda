@@ -55,6 +55,19 @@
 		<div class="row content-section">
 		    <div class="main-content">
 		        <div class="small-9 medium-9 large-9 columns">
+								<% if !flash[:notice].nil? %>
+									<div data-alert="" class="alert-box success">
+										<%= notice %>
+									  <a href="" class="close">×</a>
+									</div>
+								<% end %>
+								<% if !flash[:alert].nil? %>
+									<div data-alert="" class="alert-box alert round">
+									  <%= alert %>
+									  <a href="" class="close">×</a>
+									</div>
+								<% end %>
+								
 		            <%= yield %>
 		        </div>
 						
