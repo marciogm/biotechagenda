@@ -32,8 +32,11 @@ class Evento < ActiveRecord::Base
     end
   end
   
-  private
-   
+  def desconfirma_presenca(user)
+    evento_confirmado = Confirma.where(evento_id: self.id, user_id: user.id).first
+    evento_confirmado.destroy
+  end
+
   def usuario_aprovado?(user)
     user = Confirma.where(user_id: self.id, evento_id: user.id)
     user.empty?

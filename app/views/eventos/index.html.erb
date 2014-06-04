@@ -29,9 +29,9 @@
 
 <div id="myModal" class="reveal-modal small" data-reveal>
 	<% if current_user %>
-		<%= render partial: "eventos/facebook", locals: {evento: evento, user: current_user.id}%>
+		<%= render partial: "eventos/facebook", locals: {evento: evento, user: current_user.id} %>
 	<% else %>
-		<%= render partial: "eventos/facebook" %>
+		<%= render partial: "eventos/facebook", locals: {evento: evento } %>
 	<% end %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
