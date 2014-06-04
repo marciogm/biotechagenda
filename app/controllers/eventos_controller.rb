@@ -24,7 +24,7 @@ class EventosController < ApplicationController
 
     respond_to do |format|
       if @evento.save
-        format.html { redirect_to @evento, notice: 'Evento was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Obrigado por divulgar este evento, assim que for aprovado, aparecerá na listagem.' }
         format.json { render :show, status: :created, location: @evento }
       else
         format.html { render :new }

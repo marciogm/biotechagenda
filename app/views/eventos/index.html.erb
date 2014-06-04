@@ -19,22 +19,8 @@
 		<div class="show_evento">
 			<strong><%= link_to evento.nome, evento %></strong>
 			<p><%= evento.cidade.nome %> - <%= evento.estado.nome %></p>
-			<ul class="inline-list">
-				<li><a href=""></a></li>
-				<li><a href="#" data-reveal-id="myModal">Eu Vou!</a></li>
-			</ul>
 		</div>
 	</div>
 	<hr/>
-
-<div id="myModal" class="reveal-modal small" data-reveal>
-	<% if current_user %>
-		<%= render partial: "eventos/facebook", locals: {evento: evento, user: current_user.id} %>
-	<% else %>
-		<%= render partial: "eventos/facebook", locals: {evento: evento } %>
-	<% end %>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
 <% end %>
 </div>
-
