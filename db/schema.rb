@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602164441) do
+ActiveRecord::Schema.define(version: 20140604025256) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 20140602164441) do
   end
 
   add_index "cidades", ["estado_id"], name: "index_cidades_on_estado_id"
+
+  create_table "confirmas", force: true do |t|
+    t.integer  "evento_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "confirmas", ["evento_id"], name: "index_confirmas_on_evento_id"
+  add_index "confirmas", ["user_id"], name: "index_confirmas_on_user_id"
 
   create_table "estados", force: true do |t|
     t.string   "sigla"
@@ -112,6 +122,7 @@ ActiveRecord::Schema.define(version: 20140602164441) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "facebook_imagem_url"
   end
 
 end
