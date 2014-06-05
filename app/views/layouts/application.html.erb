@@ -33,7 +33,7 @@
 				    <section class="top-bar-section">
 				        <ul class="right">
 				            <li class="active"><%=link_to "Eventos", eventos_path %></li>
-				            <li><a href="blog.php">Sobre</a></li>
+				            <li><%= link_to "Sobre", sobre_index_path %></li>
 				            <li><a href="#">Contato</a></li>
 										<% if current_user %>
 											<li><%= link_to current_user.name, "/" %></li>

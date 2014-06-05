@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sobre/index'
+
   get 'sessions/create'
 
   get 'sessions/destroy'
