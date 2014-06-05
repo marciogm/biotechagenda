@@ -75,10 +75,10 @@
 								<%= link_to "Novo Evento", new_evento_path, class: "button expand"%>
 								<h5>Categorias</h5>
 								<ul class="side-nav">
-									<li><a href="#">Cursos</a></li>
-									<li><a href="#">Palestras</a></li>
-									<li><a href="#">Encontros</a></li>
-									<li><a href="#">Congressos</a></li>
+			            <li><%= link_to "Cursos", cursos_eventos_path %></li>
+									<li><%= link_to "Palestras", palestras_eventos_path %></li>
+									<li><%= link_to "Encontros", encontros_eventos_path %></li>
+									<li><%= link_to "Congressos", congressos_eventos_path %></li>
 								</ul>
 				
 								<div class="panel">

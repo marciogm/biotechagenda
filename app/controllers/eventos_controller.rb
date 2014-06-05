@@ -10,6 +10,27 @@ class EventosController < ApplicationController
   # GET /eventos/1
   # GET /eventos/1.json
   def show
+    index
+  end
+  
+  def cursos
+    @categoria = Categoria.where(nome: "Cursos")
+    @eventos = Evento.aprovados.where(categoria: @categoria)
+  end
+  
+  def palestras
+    @categoria = Categoria.where(nome: "Palestras")
+    @eventos = Evento.aprovados.where(categoria: @categoria)
+  end
+  
+  def encontros
+    @categoria = Categoria.where(nome: "Encontros")
+    @eventos = Evento.aprovados.where(categoria: @categoria)
+  end
+  
+  def congressos
+    @categoria = Categoria.where(nome: "Congressos")
+    @eventos = Evento.aprovados.where(categoria: @categoria)
   end
 
   # GET /eventos/new

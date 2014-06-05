@@ -12,9 +12,9 @@ class Evento < ActiveRecord::Base
   validates :nome, :email_para_contato, :data, :descricao, :estado_id, :cidade_id, :categoria_id, presence: { message: "não pode ser vazio" }
   validates :email_para_contato, format: { with: /@/, message: "dever ser válido"}
     
-  scope :nao_aprovados, -> { where(aprovado: false) }
-  scope :aprovados, -> { where(aprovado: true) }
-  scope :aprovados_por_data, -> { where(aprovado: true).order("data ASC") }
+  scope :nao_aprovados,         ->  { where(aprovado: false) }
+  scope :aprovados,             ->  { where(aprovado: true) }
+  scope :aprovados_por_data,    ->  { where(aprovado: true).order("data ASC") }
   
   def aprova!
     self.aprovado = true

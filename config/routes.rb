@@ -3,7 +3,14 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  resources :eventos
+  resources :eventos do
+    collection do
+      get :cursos
+      get :palestras
+      get :encontros
+      get :congressos
+    end
+  end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -14,6 +21,7 @@ Rails.application.routes.draw do
   match "eventos/confirmar/:id", to: 'eventos#confirma_presenca_evento', via: [:post]
   match "eventos/confirmar/deleta/:id", to: 'eventos#desconfirmar_presenca_evento', via: [:post]
   match "/cidade_por_estado", to: "cidades#cidade_por_estado", via: [:get]
+  
   
   # Routes for Facebook login
   match "auth/:provider/callback", to: "sessions#create", via: [:get, :post]
