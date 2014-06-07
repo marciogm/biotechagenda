@@ -38,7 +38,9 @@ class Evento < ActiveRecord::Base
   end
 
   def usuario_aprovado?(user)
-    user = Confirma.where(user_id: self.id, evento_id: user.id)
-    user.empty?
+    if user
+      user = Confirma.where(user_id: self.id, evento_id: user.id)
+      user.empty?
+    end
   end
 end
