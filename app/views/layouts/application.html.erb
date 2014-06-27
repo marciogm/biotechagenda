@@ -34,7 +34,7 @@
 				        <ul class="right">
 				            <li class="active"><%=link_to "Eventos", eventos_path %></li>
 				            <li><%= link_to "Sobre", sobre_index_path %></li>
-				            <li><a href="#">Contato</a></li>
+				            <!-- <li><a href="#">Contato</a></li> -->
 										<% if current_user %>
 											<li><%= link_to current_user.name, "/" %></li>
 											<li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
@@ -82,9 +82,8 @@
 								</ul>
 				
 								<div class="panel">
-									<h5>Featured</h5>
-									<p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-									<a href="#">Read More &rarr;</a>
+									<h5>Destaques</h5>
+									<p></p>
 								</div>
 							</aside>
 						</div>
