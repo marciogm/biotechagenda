@@ -40,6 +40,12 @@ h2 {
 	padding-bottom: 0px;
 }
 
+.descricao p {
+	font-size: 15px;
+	line-height: 20px;
+	margin-bottom: 0px;
+}
+
 #myModal {
 	margin-top: 60px;
 }
