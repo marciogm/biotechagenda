@@ -12,15 +12,15 @@
 		</br>
 		</br>
 	  <strong>Email para contato:</strong>
-	  <%= @evento.email_para_contato %>
+		<%= mail_to @evento.email_para_contato %>
 		</br>
 		</br>
 	  <strong>Site:</strong>
-	  <%= @evento.site %>
+	  <%= link_to @evento.site, url_with_protocol(@evento.facebook), target: "_blank" %>
 		</br>
 		</br>
 	  <strong>Facebook:</strong>
-	  <%= @evento.facebook %>
+	  <%= link_to @evento.facebook, url_with_protocol(@evento.facebook), target: "_blank" %>
 	</div>
 </div>
 
