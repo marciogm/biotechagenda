@@ -3,7 +3,7 @@
 <% @eventos.aprovados_por_data.each do |evento| %>
 	<div class="large-2 columns small-3">
 		<div class="data">
-			<p class="data_evento"><%= evento.data.day %></p><small><%= Date::MONTHNAMES[evento.data.month]%></small>
+			<p class="data_evento"><%= evento.data.day %></p><small><%= month_name(evento.data.month) %></small>
 		</div>
 	</div>
 	
