@@ -23,6 +23,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'redactor-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

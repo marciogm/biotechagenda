@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-	
+
 	<div class="row">
 		<div class="large-12 columns">
       <label>Nome do evento
@@ -18,7 +18,7 @@
       </label>
     </div>
   </div>
-	
+
 	<div class="row">
 		<div class="large-6 columns">
       <label>E-mail para contato
@@ -31,43 +31,43 @@
       </label>
     </div>
   </div>
-	
+
 	<div class="row">
 		<div class="large-6 columns">
       <label>Quando?
 				<%= f.text_field :data, class: "large-12.columns span2", id: "dp"  %>
       </label>
     </div>
-		
+
 		<div class="large-6 columns">
       <label>Termina?
 				<%= f.text_field :data_terminio, class: "large-12.columns span2", id: "dp2" %>
       </label>
     </div>
   </div>
-	
+
 	<div class="row">
 		<div class="large-6 columns">
       <label>Estado
 				<%= f.collection_select :estado_id, Estado.all, :id, :nome, :include_blank => "Seleciona um Estado"%>
       </label>
     </div>
-		
+
 		<div class="large-6 columns">
       <label>Cidade
 				<%= f.collection_select :cidade_id, [], :id, :nome, include_blank: "Seleciona uma Cidade" %>
       </label>
     </div>
   </div>
-	
+
 	<div class="row">
 		<div class="large-12 columns">
       <label>Descricao
-				<%= f.text_area :descricao, class: "large-12.columns" %>
+        <%= f.text_area :descricao, :class => "redactor" %>
       </label>
     </div>
   </div>
-	
+
 	<div class="row">
 		<div class="large-12 columns">
       <label>Site
@@ -75,7 +75,7 @@
       </label>
     </div>
   </div>
-	
+
 	<div class="row">
 		<div class="large-12 columns">
       <label>Facebook
@@ -83,7 +83,7 @@
       </label>
     </div>
   </div>
-	
+
 	<div class="row">
 		<div class="large-12 columns">
       <label>Logo

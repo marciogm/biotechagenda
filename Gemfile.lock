@@ -169,6 +169,10 @@ GEM
       polyamorous (~> 1.0.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    redactor-rails (0.4.5)
+      devise
+      mime-types
+      orm_adapter
     responders (1.0.0)
       railties (>= 3.2, < 5)
     ruby-progressbar (1.5.1)
@@ -226,6 +230,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   rails (= 4.1.0)
+  redactor-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
