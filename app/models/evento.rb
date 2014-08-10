@@ -16,9 +16,7 @@ class Evento < ActiveRecord::Base
 
   scope :nao_aprovados,         ->  { where(aprovado: false) }
   scope :aprovados,             ->  { where(aprovado: true) }
-  # scope :aprovados_por_data,    ->  { where(aprovado: true).order("data ASC") }
-  scope :aprovados_por_data,    ->  { where("aprovado = ? AND ((? between data and data_terminio) OR (data >= ?))", true, Date.today, Date.today)}
-  scope :aprovados_terminados,  -> { where("aprovado = ? AND ((? between data and data_terminio) OR (data <= ?))", true, Date.today, Date.today)}
+  scope :aprovados_por_data,    ->  { where("aprovado = ? AND ((? between data and data_terminio) OR (data >= ?))", true, Date.today, Date.today).order("data ASC")}
 
   def aprova!
     self.aprovado = true

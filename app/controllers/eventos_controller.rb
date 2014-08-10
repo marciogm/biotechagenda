@@ -12,25 +12,25 @@ class EventosController < ApplicationController
   def show
     index
   end
-  
+
   def cursos
     @categoria = Categoria.where(nome: "Cursos")
-    @eventos = Evento.aprovados.where(categoria: @categoria)
+    @eventos = Evento.aprovados_por_data.where(categoria: @categoria)
   end
-  
+
   def palestras
     @categoria = Categoria.where(nome: "Palestras")
-    @eventos = Evento.aprovados.where(categoria: @categoria)
+    @eventos = Evento.aprovados_por_data.where(categoria: @categoria)
   end
-  
+
   def encontros
     @categoria = Categoria.where(nome: "Encontros")
-    @eventos = Evento.aprovados.where(categoria: @categoria)
+    @eventos = Evento.aprovados_por_data.where(categoria: @categoria)
   end
-  
+
   def congressos
     @categoria = Categoria.where(nome: "Congressos")
-    @eventos = Evento.aprovados.where(categoria: @categoria)
+    @eventos = Evento.aprovados_por_data.where(categoria: @categoria)
   end
 
   # GET /eventos/new
@@ -53,7 +53,7 @@ class EventosController < ApplicationController
       end
     end
   end
-  
+
   def approve
     respond_to do |format|
       evento = Evento.find_by_slug(params[:id])
@@ -62,7 +62,7 @@ class EventosController < ApplicationController
       end
     end
   end
-  
+
   def confirma_presenca_evento
     respond_to do |format|
       evento = Evento.find_by_slug(params[:id])
@@ -73,7 +73,7 @@ class EventosController < ApplicationController
       end
     end
   end
-  
+
   def desconfirmar_presenca_evento
     respond_to do |format|
       evento = Evento.find_by_slug(params[:id])
@@ -84,8 +84,8 @@ class EventosController < ApplicationController
       end
     end
   end
-      
-        
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -95,7 +95,7 @@ class EventosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def evento_params
-      params.require(:evento).permit(:nome, :email_para_contato, :data, :data_terminio, 
+      params.require(:evento).permit(:nome, :email_para_contato, :data, :data_terminio,
       :descricao, :site, :facebook, :aprovado, :logo, :estado_id, :cidade_id, :categoria_id)
     end
 end
