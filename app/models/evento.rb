@@ -9,8 +9,8 @@ class Evento < ActiveRecord::Base
   belongs_to :categoria
   has_many :confirmas
 
-  validates :nome, :email_para_contato, :data, :descricao, :estado_id, :cidade_id, :categoria_id, presence: { message: "não pode ser vazio" }
-  validates :email_para_contato, format: { with: /@/, message: "dever ser válido"}
+  validates :nome, :data, :descricao, :estado_id, :cidade_id, :categoria_id, presence: { message: "Não pode ser vazio" }
+  validates :email_para_contato, format: { with: /@/, message: "Deve ser válido"}
 
   data = Date.today
 
