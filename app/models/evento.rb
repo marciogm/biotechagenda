@@ -2,7 +2,7 @@ class Evento < ActiveRecord::Base
   extend FriendlyId
   friendly_id :nome, :use => [:slugged, :finders]
 
-  mount_uploader :logo, LogoUploader
+  # mount_uploader :logo, LogoUploader
 
   belongs_to :estado
   belongs_to :cidade
