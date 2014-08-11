@@ -16,3 +16,8 @@
  *= require base
 
  */
+
+ .sobre p {
+   line-height: 1rem;
+   padding-bottom: 10px;
+ }
