@@ -53,3 +53,5 @@ group :test do
   gem "minitest"
   gem "minitest-reporters"
 end
+
+gem 'rollbar', '~> 1.2.7'
