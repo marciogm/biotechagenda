@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= adminlte/bootstrap/js/bootstrap.min
+//= adminlte/plugins/slimScroll/jquery.slimscroll.min
+//= adminlte/plugins/fastclick/fastclick
 //= require_tree .
