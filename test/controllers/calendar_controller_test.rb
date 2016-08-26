@@ -1,9 +1,8 @@
 require 'test_helper'
 
-class HomeControllerTest < ActionDispatch::IntegrationTest
+class CalendarControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get root_url
+    get calendar_index_url
     assert_response :success
   end
-
 end

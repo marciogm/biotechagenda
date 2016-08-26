@@ -3,3 +3,4 @@
 
 # asset 'bootstrap'
 asset "adminlte"
+asset "moment"
