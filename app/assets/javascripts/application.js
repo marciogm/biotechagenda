@@ -18,3 +18,7 @@
 //= adminlte/plugins/fastclick/fastclick
 //= adminlte/app.min
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+  $.AdminLTE.layout.activate();
+});
