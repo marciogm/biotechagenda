@@ -16,3 +16,6 @@
 /tmp
 /public/uploads
 .env
+
+# Ignore Bower Components
+/vendor/*
