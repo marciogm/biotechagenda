@@ -5,4 +5,9 @@ class CalendarControllerTest < ActionDispatch::IntegrationTest
     get calendar_index_url
     assert_response :success
   end
+
+  test "should get index JSON" do
+    get calendar_index_url, as: :json
+    assert_response :success
+  end
 end
