@@ -6,6 +6,13 @@ require "minitest/reporters"
 
 Minitest::Reporters.use!
 
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :minitest_4
+    with.library :rails
+  end
+end
+
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
 
