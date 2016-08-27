@@ -7,6 +7,17 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "get show" do
+    event = create(:event)
+    get event_path(event)
+    assert_response :success
+  end
+
+  test "get edit" do
+    event = create(:event)
+    get edit_event_path(event)
+    assert_response :success
+  end
 
   test "should create event" do
     assert_difference('Event.count') do
