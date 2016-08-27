@@ -6,8 +6,10 @@ rvm:
 
 before_script:
   - psql -c 'create database bio_test' -U postgres
+  - npm install bower -g
 
 script:
     - RAILS_ENV=test bundle exec rake db:schema:load --trace
     - bundle exec rake db:test:prepare
+    - bundle exec rake bower:install
     - bundle exec rake test
