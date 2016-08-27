@@ -34,6 +34,7 @@ gem "bower-rails", "~> 0.10.0"
 
 group :test do
   gem 'minitest-reporters'
+  gem 'shoulda-matchers'
 end
 
 group :development, :test do
