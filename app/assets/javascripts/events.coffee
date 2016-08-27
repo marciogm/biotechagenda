@@ -4,6 +4,7 @@
 #
 #= require smalot-bootstrap-datetimepicker
 #= require smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pt-BR
+#= require adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min
 
 $(document).on 'turbolinks:load', ->
   $('.form_start_date').datetimepicker
@@ -15,3 +16,6 @@ $(document).on 'turbolinks:load', ->
     language: 'pt-BR'
     format: 'dd/mm/yyyy hh:ii'
     autoclose: true
+
+
+  $("#event_description").wysihtml5();

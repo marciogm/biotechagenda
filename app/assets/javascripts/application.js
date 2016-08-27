@@ -16,4 +16,5 @@
 //= adminlte/bootstrap/js/bootstrap.min
 //= adminlte/plugins/slimScroll/jquery.slimscroll.min
 //= adminlte/plugins/fastclick/fastclick
+//= adminlte/app.min
 //= require_tree .
