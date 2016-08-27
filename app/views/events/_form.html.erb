@@ -33,12 +33,12 @@
 
             <div class="form-group">
               <%= f.label "Quando começa?" %>
-              <%= f.time_select :start_date, :class => "form-control" %>
+              <input type="text" id="event[start_date]" readonly class="form_start_date form-control">
             </div>
 
             <div class="form-group">
               <%= f.label "Quando termina?" %>
-              <%= f.time_select :end_date, :class => "form-control" %>
+              <input type="text" id="event[end_date]" readonly class="form_end_date form-control">
             </div>
 
             <div class="form-group">
