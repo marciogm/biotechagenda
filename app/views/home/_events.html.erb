@@ -1,0 +1,28 @@
+<!-- The time line -->
+<ul class="timeline">
+  <!-- /.timeline-label -->
+  <!-- timeline item -->
+  <% @events.each do |event| %>
+    <li>
+      <i class="fa fa-calendar bg-blue"></i>
+
+      <div class="timeline-item">
+        <span class="time"><i class="fa fa-clock-o"></i> <%= event.start_date %></span>
+
+        <h3 class="timeline-header"><%= link_to event.name, event %></h3>
+
+        <div class="timeline-body">
+          <%= strip_tags event.description %>
+        </div>
+        <div class="timeline-footer">
+          <%= link_to "Saber mais", event, class: "btn btn-primary btn-xs"%>
+        </div>
+      </div>
+    </li>
+  <% end %>
+
+  <!-- END timeline item -->
+  <li>
+    <i class="fa fa-clock-o bg-gray"></i>
+  </li>
+</ul>
