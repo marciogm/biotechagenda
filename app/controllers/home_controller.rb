@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @events = Event.all.order(:start_date)
+    @events = Event.by_month
   end
 end
