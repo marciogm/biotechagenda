@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :calendar, only: [:index]
+
+  get '/select/states/', to: 'select#states', as: 'select_states'
+  get '/select/cities/', to: 'select#cities', as: 'select_cities'
 end

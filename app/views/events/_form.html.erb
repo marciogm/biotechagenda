@@ -26,9 +26,35 @@
               <%= f.label "Nome" %>
               <%= f.text_field :name, :class => "form-control" %>
             </div>
+
             <div class="form-group">
               <%= f.label "Descrição" %>
               <%= f.text_area :description, :class => "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "Aonde?" %>
+              <div class="row">
+                <div class="col-md-4">
+                  <select id="countries_select" class="form-control select2" style="width: 100%;" name="event[country]">
+                    <option value="" selected="">Pais</option>
+                    <% CS.countries.each do |key, value| %>
+                      <option value="<%= key %>"><%= value %></option>
+                    <% end %>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <select id="state_select" class="form-control select2" disabled style="width: 100%;" name="event[state]">
+                    <option value="" selected="">Estado</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                  <select id="city_select" class="form-control select2" disabled style="width: 100%;" name="event[city]">
+                    <option value="" selected="">Cidade</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
             <div class="form-group">

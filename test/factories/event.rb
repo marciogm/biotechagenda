@@ -4,5 +4,8 @@ FactoryGirl.define do
     description 'Awesome event'
     start_date Time.zone.now
     end_date Time.zone.now
+    country "Brazil"
+    state "Sao Paulo"
+    city "Sao Paulo"
   end
 end

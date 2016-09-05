@@ -1,0 +1,2 @@
+$("#city_select").prop('disabled', false);
+$("#city_select").html("<%= escape_javascript(render partial: 'cities', locals: { state: @state } ) %>");

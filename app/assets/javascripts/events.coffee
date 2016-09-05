@@ -5,8 +5,25 @@
 #= require smalot-bootstrap-datetimepicker
 #= require smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pt-BR
 #= require adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min
+#= require adminlte/plugins/select2/select2.full.min
 
 $(document).on 'turbolinks:load', ->
+  $('#countries_select').change ->
+    $.ajax
+      type: 'GET'
+      url: '/select/states/'
+      dataType: 'script'
+      data:
+        country: $("#countries_select option:selected").val()
+
+  $('#state_select').change ->
+    $.ajax
+      type: 'GET'
+      url: '/select/cities/'
+      dataType: 'script'
+      data:
+        state: $("#state_select option:selected").val()
+
   $('.form_start_date').datetimepicker
     language: 'pt-BR'
     format: 'dd/mm/yyyy hh:ii'
@@ -18,4 +35,6 @@ $(document).on 'turbolinks:load', ->
     autoclose: true
 
 
-  $("#event_description").wysihtml5();
+  $("#event_description").wysihtml5()
+
+  $(".select2").select2()

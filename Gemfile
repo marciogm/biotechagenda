@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem "bower-rails", "~> 0.10.0"
+gem 'city-state'
 
 group :test do
   gem 'minitest-reporters'
