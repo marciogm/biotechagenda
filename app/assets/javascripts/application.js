@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= adminlte/bootstrap/js/bootstrap.min
-//= adminlte/plugins/slimScroll/jquery.slimscroll.min
-//= adminlte/plugins/fastclick/fastclick
-//= adminlte/app.min
+//= require adminlte/bootstrap/js/bootstrap.min
+//= require adminlte/plugins/slimScroll/jquery.slimscroll.min
+//= require adminlte/plugins/fastclick/fastclick
+//= require adminlte/dist/js/app.min
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
