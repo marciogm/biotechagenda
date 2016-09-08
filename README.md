@@ -1,24 +1,9 @@
-# README
+<p align="center">
+<a href="http://www.biotechagenda.com">
+<img title="biotechagenda" alt="biotechagenda logo" src="https://raw.githubusercontent.com/marciogm/biotechagenda/master/app/assets/images/logo.png"/>
+</a>
+<br/>
+<a href="http://www.biotechagenda.com">biotechagenda.com</a>
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[![Build Status](https://travis-ci.org/marciogm/biotechagenda.svg?branch=master)](https://travis-ci.org/marciogm/biotechagenda)

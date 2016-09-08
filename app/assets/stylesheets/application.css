@@ -12,7 +12,7 @@
  *
  *= require adminlte/bootstrap/css/bootstrap.min
  *= require adminlte/dist/css/AdminLTE.min
- *= require adminlte/dist/css/skins/skin-blue.min
+ *= require adminlte/dist/css/skins/skin-black.min
  *= require_tree .
  *= require_self
  */
