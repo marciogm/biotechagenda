@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
 
-  scope :by_month, -> { all.group_by { |e| e.start_date.strftime("%B - %Y") } }
+  scope :by_month, -> { all.order("start_date ASC").group_by { |e| e.start_date.strftime("%B - %Y") } }
 
   validates_presence_of :name, :on => :create
   validates_presence_of :description, :on => :create
