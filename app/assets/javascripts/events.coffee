@@ -34,6 +34,13 @@ $(document).on 'turbolinks:load', ->
     format: 'dd/mm/yyyy hh:ii'
     autoclose: true
 
+  $('.form_start_date').on 'changeDate', (e) ->
+    console.log "mdei"
+    $('.form_end_date').datetimepicker('setStartDate', e.date);
+    return
+  $('.form_end_date').on 'changeDate', (e) ->
+    $('.form_start_date').datetimepicker('setEndDate', e.date);
+    return
 
   $("#event_description").wysihtml5()
 
