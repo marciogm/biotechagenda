@@ -13,7 +13,10 @@
         <i class="fa fa-calendar bg-blue"></i>
 
         <div class="timeline-item">
-          <span class="time"><i class="fa fa-clock-o"></i> <%= event.start_date %></span>
+          <span class="time">
+            <i class="fa fa-clock-o"></i>
+            <strong><%= event.start_date.strftime("%d/%m/%Y - %H:%M %p") %></strong>
+            </span>
 
           <h3 class="timeline-header"><%= link_to event.name, event %></h3>
 
