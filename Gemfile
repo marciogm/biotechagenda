@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem "bower-rails", "~> 0.10.0"
 gem 'city-state'
+gem 'devise'
 
 group :test do
   gem 'minitest-reporters'
