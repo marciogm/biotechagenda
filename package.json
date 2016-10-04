@@ -1,0 +1,11 @@
+{
+  "name": "biotechagenda",
+  "version": "1.0.0",
+  "engine": {
+    "node": "4.5.0",
+    "npm": "2.15.9"
+  },
+  "dependencies": {
+    "bower": "~1.7"
+  }
+}
