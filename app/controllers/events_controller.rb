@@ -27,7 +27,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_path, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Event was successfully destroyed.' }
     end
   end
 

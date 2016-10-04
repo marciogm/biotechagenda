@@ -54,7 +54,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
       delete event_path(event)
     end
 
-    assert_redirected_to events_path
+    assert_redirected_to root_path
     assert_equal 'Event was successfully destroyed.', flash[:notice]
   end
 

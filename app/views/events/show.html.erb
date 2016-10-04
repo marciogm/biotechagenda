@@ -17,6 +17,13 @@
       <div class="box box-primary">
         <div class="box-header with-border">
           <h1 class="box-title"><%= @event.name %></h1>
+          <div class="box-tools pull-right">
+            <% if admin_signed_in? %>
+            <%= button_to "Deletar", {id: @event.id },
+                method: :delete, data: { confirm: "Are you sure?" },
+                class: "btn btn-block btn-danger btn-sm"%>
+            <% end %>
+          </div>
         </div>
         <div class="box-body">
           <%= @event.description.html_safe %>
